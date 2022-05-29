@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://background.tscn" type="PackedScene" id=1]
+[ext_resource path="res://basictiles_2.png" type="Texture" id=2]
+[ext_resource path="res://background2.gd" type="Script" id=3]
+
+[node name="background2" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="background" parent="." instance=ExtResource( 1 )]
+position = Vector2( -56, 32 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 136, -8 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 32, 16, 14 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 40, 40 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 32, 16, 14 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 192, 120 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 32, 16, 14 )
+
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( 56, 152 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 64, 32, 16, 14 )
