@@ -13,19 +13,28 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(global_position)
+	#print(global_position)
 	pass
 
-export (PackedScene) var mob
+var mobs = [load("res://enemy.tscn"),load("res://enemy_bat.tscn"),load("res://enemy_ghost.tscn"),load("res://enemy_slime.tscn"),load("res://enemy_spider.tscn")]
 
 func _on_Timer_timeout():
-	if ($Timer.wait_time > 1):
-		$Timer.wait_time*=0.98
-	
-	var inst = mob.instance()
-	inst.position=position
+	if ($Timer.wait_time > 0.3):
+		$Timer.wait_time*=0.985
+	#if randi()%6 == 0:
+	#	var loot = load("res://power_up.tscn")
+	#	loot = loot.instance()
+	#	get_node("/root/root").add_child(loot)
+	#	loot.global_position=global_position
+	var mob = mobs[randi()%mobs.size()]
+	for i in randi()%5:
+		
+		var inst = mob.instance()
+	#inst.global_position=global_position
 	#print(global_position)
-	get_node("/root/root").add_child(inst)
+		get_node("/root/root").add_child(inst)
+		inst.global_position.x=global_position.x+randi()%128
+		inst.global_position.y=global_position.y+randi()%128
 	
 	
 	
